@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        android:text="@string/app_name"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <android.inputmethodservice.ExtractEditText
+        android:id="@+id/edt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:hint="title"
+        android:textColor="#5f5e5e"
+        android:textSize="14sp" />
+
+    <android.inputmethodservice.ExtractEditText
+        android:id="@+id/edt_note_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:hint="note_id"
+        android:inputType="number"
+        android:textColor="#5f5e5e"
+        android:textSize="14sp" />
+
+    <android.inputmethodservice.ExtractEditText
+        android:id="@+id/edt_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10sp"
+        android:hint="note"
+        android:textColor="#5f5e5e"
+        android:textSize="14sp" />
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|right"
+        android:orientation="horizontal"
+        android:padding="10sp">
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:text="confirm"
+            android:textColor="@color/purple_500"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:text="cancel"
+            android:textColor="@color/purple_500"
+            android:textSize="14sp" />
+
+    </android.support.v7.widget.LinearLayoutCompat>
+</android.support.v7.widget.LinearLayoutCompat>
