@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.NoteL
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.fab_insert_note:
+                insertOrUpdateNoteDialog(0, null);
                 break;
         }
     }
@@ -160,6 +161,7 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.NoteL
             @Override
             public void onClick(View view) {
                 bottomSheetDialog.dismiss();
+                insertOrUpdateNoteDialog(position, note);
             }
         });
         bottomSheetDialog.setContentView(view);
@@ -207,6 +209,9 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.NoteL
         if (note != null) {
             edt_note.setText(note.getNote());
             edt_title.setText(note.getTitle());
+            edt_note_id.setVisibility(View.GONE);
+        } else {
+            edt_note.setVisibility(View.VISIBLE);
         }
         final AlertDialog dialog = alertDialog.create();
 
@@ -216,6 +221,7 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.NoteL
                 if (note != null) {
                     note.setTitle(edt_title.getText().toString());
                     note.setNote(edt_title.getText().toString());
+                    noteAdapter.updateNote(position, note);
                     return;
                 }
                 Note _note = new Note();

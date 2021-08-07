@@ -75,4 +75,10 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteViewHolder> {
         notes.add(note);
         notifyDataSetChanged();
     }
+
+    public void updateNote(int position, Note note){
+        SQLiteHelper.builder(context).updateNote(note);
+        notes.add(0, note);
+        notifyDataSetChanged();
+    }
 }
